@@ -1,97 +1,62 @@
-:root{
-  --brand:#004aad;
-  --bg:#ffffff;
-  --text:#0b1220;
-  --muted:#667085;
-  --card:#ffffff;
-  --ring:rgba(0,74,173,0.25);
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 0;
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans";
-  color:var(--text);
-  background:linear-gradient(180deg,#f6f8fb 0%, #f9fbff 40%, #ffffff 100%);
+.container {
+  max-width: 600px;
+  margin: 80px auto;
+  text-align: center;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* Layout */
-.wrap{max-width:1040px;margin:0 auto;padding:20px}
-
-/* Brand */
-.brand{
-  display:inline-flex;align-items:center;gap:10px;
-  text-decoration:none;color:var(--text);
-}
-.brand-mark{
-  width:36px;height:36px;border-radius:14px;background:var(--brand);
-  display:inline-block;box-shadow:0 1px 0 rgba(0,0,0,0.06), 0 8px 24px rgba(0,74,173,0.25);
-}
-.brand-text{font-weight:700;letter-spacing:0.2px}
-
-/* Card look */
-.card{
-  background:var(--card);
-  border:1px solid #eef2f6;
-  border-radius:28px;
-  box-shadow:0 2px 8px rgba(16,24,40,0.04);
+h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
-/* Hero */
-.hero{
-  margin-top:28px;
-  padding:48px;
-  display:grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap:28px;
-  align-items:center;
+.subtitle {
+  color: #555;
+  margin-bottom: 30px;
 }
-.hero-text h1{
-  margin:0 0 8px 0;
-  font-size:42px;line-height:1.1;letter-spacing:-0.02em;
-}
-.hero-text p{margin:0 0 20px 0;color:var(--muted);font-size:18px}
 
-/* Buttons */
-.cta{display:flex;flex-wrap:wrap;gap:12px;margin:8px 0 8px}
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;
-  padding:12px 18px;border-radius:16px;border:1px solid #e4e8ef;
-  text-decoration:none;color:var(--text);font-weight:600;
-  transition:.15s ease; box-shadow:0 1px 0 rgba(16,24,40,0.02);
+.download-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
-.btn:hover{transform:translateY(-1px)}
-.btn:focus{outline:none; box-shadow:0 0 0 4px var(--ring)}
-.btn-primary{background:var(--brand);border-color:var(--brand);color:#fff}
-.btn-outline{background:#fff;color:var(--brand);border-color:#d9e2ef}
-.btn-ghost{background:#f3f6fb;color:var(--brand);border-color:transparent}
 
-/* Decorative phone block (optioneel) */
-.hero-art{display:flex;justify-content:flex-end}
-.phone{width:320px;overflow:hidden;padding:16px;margin-left:auto;margin-right:8px}
-.phone-top{display:flex;gap:6px;margin-bottom:10px}
-.dot{width:8px;height:8px;border-radius:999px;background:#d1d9e6}
-.phone-body{
-  background:linear-gradient(180deg,#ffffff 0%, #f6f9ff 100%);
-  border:1px solid #e6edf6;border-radius:24px;min-height:360px;padding:16px;
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #0078d7; /* Windows blauw */
+  color: white;
+  text-decoration: none;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: background 0.3s ease;
 }
-.pill{height:16px;width:120px;border-radius:999px;background:rgba(0,74,173,.15);margin:4px 0 14px}
-.row{height:14px;border-radius:10px;background:#e9eef7;margin:10px 0}
-.block{height:110px;border-radius:16px;background:rgba(0,74,173,.12);border:1px solid rgba(0,74,173,.28);margin-top:18px}
 
-/* Footer */
-.footer{
-  display:flex;align-items:center;justify-content:space-between;
-  color:#98a2b3;font-size:14px;margin:34px auto 40px;
+.btn:hover {
+  background: #005a9e;
 }
-.links{display:flex;gap:16px}
-.links a{color:#7b8798;text-decoration:none}
-.links a:hover{color:#3f5575}
 
-/* Responsive */
-@media (max-width: 900px){
-  .hero{grid-template-columns:1fr;padding:28px}
-  .hero-art{justify-content:center}
-  .phone{margin:0 auto}
+.btn img.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.btn.disabled {
+  background: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  pointer-events: none;
 }
