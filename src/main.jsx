@@ -1,24 +1,17 @@
-import React from 'react'
-import { createRoot } from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import './index.css'
-import App from './App'
-import Welcome from './pages/Welcome'
-import Dashboard from './pages/Dashboard'
+// src/main.jsx
+import React from "react"
+import ReactDOM from "react-dom/client"
+import { BrowserRouter } from "react-router-dom"
+import App from "./App.jsx"
+import "./index.css"
+import { ThemeProvider } from "./theme/ThemeContext.jsx"
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <App />,
-    children: [
-      { index: true, element: <Welcome /> },
-      { path: 'dashboard', element: <Dashboard /> },
-    ],
-  },
-])
-
-createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ThemeProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </ThemeProvider>
   </React.StrictMode>
 )
