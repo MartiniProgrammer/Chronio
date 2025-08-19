@@ -1,13 +1,41 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react"
+import { useNavigate } from "react-router-dom"
 
-export default function Welcome() {
+export default function Welcome(){
+  const navigate = useNavigate()
   return (
-    <div className="mt-16 text-center">
-      <div className="mx-auto w-28 h-28 rounded-3xl mb-6" style={{ background:'#004aad' }} />
-      <h1 className="text-3xl font-bold mb-2">Welcome to Chronio</h1>
-      <p className="text-gray-600 mb-8">Your daily rhythm, simplified.</p>
-      <Link to="/dashboard" className="btn-primary">Get Started</Link>
+    <div className="max-w-5xl mx-auto px-6 py-12">
+      <div className="card p-8 md:p-12">
+        <div className="flex flex-col md:flex-row gap-8 items-center">
+          <div className="flex-1">
+            <div className="inline-flex items-center gap-3 mb-4">
+              <span className="w-9 h-9 rounded-xl" style={{background:"var(--brand)"}} />
+              <span className="font-bold tracking-wide">Chronio</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-3">
+              Your daily rhythm, simplified.
+            </h1>
+            <p className="text-muted mb-6">
+              Plan your day, view your year, and drag tasks just like in Google Calendar—without the complexity.
+            </p>
+            <div className="flex gap-3">
+              <button className="btn btn-primary" onClick={()=>navigate("/dashboard")}>Open Dashboard</button>
+              <button className="btn" onClick={()=>navigate("/year")}>Year Overview</button>
+            </div>
+          </div>
+          <div className="flex-1 w-full">
+            <div className="card p-6 min-h-[220px]">
+              <div className="text-sm text-muted">Preview</div>
+              <div className="mt-3 grid grid-cols-7 gap-2">
+                {[...Array(14)].map((_,i)=>(
+                  <div key={i} className="h-10 rounded-xl border border-ui bg-chip"/>
+                ))}
+              </div>
+              <div className="mt-3 text-xs text-muted">Clean, modern, large rounds, subtle shadows.</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
