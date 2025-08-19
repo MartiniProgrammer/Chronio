@@ -1,24 +1,20 @@
-import React from 'react'
-import { Outlet, Link, useLocation } from 'react-router-dom'
-import InstallPrompt from './components/InstallPrompt'
+import React from "react"
+import { Routes, Route, Navigate } from "react-router-dom"
+import Welcome from "./pages/Welcome.jsx"
+import Dashboard from "./pages/Dashboard.jsx"
+import Year from "./pages/Year.jsx"
+import Navbar from "./components/Navbar.jsx"
 
 export default function App() {
-  const { pathname } = useLocation()
   return (
-    <div className="min-h-screen bg-white">
-      <header className="max-w-3xl mx-auto px-4 pt-6">
-        <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="h-9 w-9 rounded-2xl" style={{ background:'#004aad' }} />
-            <span className="font-semibold text-lg">Chronio</span>
-          </Link>
-          <nav className="text-sm text-gray-500">{pathname}</nav>
-        </div>
-      </header>
-      <main className="max-w-3xl mx-auto px-4 py-6">
-        <Outlet />
-      </main>
-      <InstallPrompt />
+    <div className="min-h-screen bg-bg text-fg">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Welcome />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/year" element={<Year />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
     </div>
   )
 }
