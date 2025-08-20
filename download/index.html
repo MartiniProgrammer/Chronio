@@ -1,29 +1,53 @@
-<!DOCTYPE html>
-<html lang="nl">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Download Chronio</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css" />
+  <!-- (optioneel) favicon van je PWA -->
+  <link rel="icon" href="/public/icons/icon-192.png">
+  <!-- Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <main class="container">
-    <h1>Download Chronio</h1>
-    <p class="subtitle">Kies jouw platform om Chronio te downloaden</p>
-
-    <div class="download-buttons">
-      <!-- Windows download -->
-        <a href="files/chronio_starter.zip" class="btn">
-            <img src="logos/windows.svg" alt="Windows logo" class="icon">
-  Download for Windows
-    </a>
-
-        <a href="#" class="btn disabled" aria-disabled="true">
-            <img src="logos/apple.svg" alt="Apple logo" class="icon">
-  Soon available on Mac
-    </a>
-
+  <header class="top">
+    <div class="top__inner">
+      <div class="brand">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span class="brand__name">Chronio</span>
+      </div>
     </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card hero">
+      <h1 class="hero__title">Get the app</h1>
+      <p class="hero__sub">Download the starter to begin planning with Chronio.</p>
+
+      <div class="cta">
+        <!-- Beide knoppen verwijzen naar dezelfde ZIP -->
+        <a class="btn btn--primary" href="files/chrono_starter.zip" download>
+          <img class="btn__ico" src="logos/windows.svg" alt="Windows">
+          <span>Download for Windows</span>
+        </a>
+
+        <a class="btn" href="files/chrono_starter.zip" download>
+          <img class="btn__ico" src="logos/apple.svg" alt="Apple">
+          <span>Download for Mac</span>
+        </a>
+      </div>
+
+      <p class="tiny">One ZIP for both platforms. Extract and follow the included README.</p>
+    </section>
   </main>
+
+  <footer class="foot">
+    <div class="foot__inner">
+      <span>© <span class="semibold">Chronio</span></span>
+    </div>
+  </footer>
 </body>
 </html>
