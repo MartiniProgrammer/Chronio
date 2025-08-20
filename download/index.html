@@ -4,13 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Download Chronio</title>
-  <link rel="stylesheet" href="./style.css?v=10">
-  <!-- (optioneel) favicon van je PWA -->
-  <link rel="icon" href="/public/icons/icon-192.png">
-  <!-- Inter font -->
+
+  <!-- Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./style.css?v=11">
+  <link rel="icon" href="./public/icons/icon-192.png">
 </head>
 <body>
   <header class="top">
@@ -25,22 +27,28 @@
   <main class="wrap">
     <section class="card hero">
       <h1 class="hero__title">Get the app</h1>
-      <p class="hero__sub">Download the starter to begin planning with Chronio.</p>
+      <p class="hero__sub">
+        Install Chronio as an app (recommended). Or download the developer source ZIP.
+      </p>
 
       <div class="cta">
-        <!-- Beide knoppen verwijzen naar dezelfde ZIP -->
-        <a class="btn btn--primary" href="files/chronio_starter_20250820-1108.zip" download>
-          <img class="btn__ico" src="logos/windows.svg" alt="Windows">
-          <span>Download for Windows</span>
+        <!-- INSTALL: open de PWA op de root; daar verschijnt de install-prompt -->
+        <a class="btn btn--primary" href="/" id="installLink">
+          <img class="btn__ico" src="logos/windows.svg" alt="Install">
+          <span>Install Chronio</span>
         </a>
 
+        <!-- DEV ZIP (broncode) -->
         <a class="btn" href="files/chronio_starter_20250820-1108.zip" download>
-          <img class="btn__ico" src="logos/apple.svg" alt="Apple">
-          <span>Download for Mac</span>
+          <img class="btn__ico" src="logos/apple.svg" alt="ZIP">
+          <span>Download source (ZIP)</span>
         </a>
       </div>
 
-      <p class="tiny">One ZIP for both platforms. Extract and follow the included README.</p>
+      <p class="tiny">
+        Tip: If you aren’t prompted automatically on the next page, use your browser menu:
+        <em>Install app / Add to Home Screen</em>.
+      </p>
     </section>
   </main>
 
@@ -50,12 +58,4 @@
     </div>
   </footer>
 </body>
-<script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.getRegistrations?.().then(rs => rs.forEach(r => r.unregister()));
-}
-if (window.caches) {
-  caches.keys().then(keys => keys.forEach(k => caches.delete(k)));
-}
-</script>
 </html>
